@@ -36,7 +36,7 @@
 #X restore 540 260 graph;
 #X text 552 60 Oscilloscope – live mix output;
 #X text 552 244 Frequency touch pad – drag vertically to retune (log 20-8000 Hz).;
-#X obj 540 420 pd engine;
+#X obj 540 420 noisebox-engine;
 #X obj 960 300 pd scope-writer;
 #X obj 960 340 pd freq-touch;
 #X obj 1060 780 dac~;
