@@ -53,7 +53,7 @@
 #X obj 120 220 mtof;
 #X obj 200 130 r noisebox-hold;
 #X obj 260 130 r noisebox-osc-wave;
-#X obj 40 250 expr (($f3==0)&&($f4!=2)&&($f4!=4))?$f2:$f1;
+#X obj 40 250 expr if(($f3==0)&&($f4!=2)&&($f4!=4),$f2,$f1);
 #X obj 40 280 clip 10 12000;
 #X obj 40 310 pack f 5;
 #X obj 40 340 line~;
@@ -273,8 +273,8 @@
 #X obj 150 250 -~ 1;
 #X obj 240 130 *~ 2;
 #X obj 240 160 -~ 1;
-#X obj 320 130 expr~ $v1 < 0.25 ? 1 : -1;
-#X obj 400 130 expr~ $v1 < 0.5 ? 1 : -1;
+#X obj 320 130 expr~ ($v1 < 0.25) ? 1 : -1;
+#X obj 400 130 expr~ ($v1 < 0.5) ? 1 : -1;
 #X obj 480 100 noise~;
 #X obj 480 130 expr~ $v1 < 0.02;
 #X obj 480 160 samphold~;
@@ -284,7 +284,7 @@
 #X obj 640 100 noise~;
 #X obj 640 130 hip~ 10;
 #X obj 200 70 sig~;
-#X obj 320 200 expr~ if($v9==0,$v1,if($v9==1,$v2,if($v9==2,$v3,if($v9==3,$v4,if($v9==4,$v5,if($v9==5,$v6,if($v9==6,$v7,$v8))))))));;
+#X obj 320 200 expr~ if($v9==0,$v1,if($v9==1,$v2,if($v9==2,$v3,if($v9==3,$v4,if($v9==4,$v5,if($v9==5,$v6,if($v9==6,$v7,$v8)))))));
 #X obj 320 230 *~ 0.9;
 #X obj 320 260 outlet~;
 #X connect 0 0 3 0;
@@ -338,8 +338,8 @@
 #X obj 150 250 -~ 1;
 #X obj 240 130 *~ 2;
 #X obj 240 160 -~ 1;
-#X obj 320 130 expr~ $v1 < 0.25 ? 1 : -1;
-#X obj 400 130 expr~ $v1 < 0.5 ? 1 : -1;
+#X obj 320 130 expr~ ($v1 < 0.25) ? 1 : -1;
+#X obj 400 130 expr~ ($v1 < 0.5) ? 1 : -1;
 #X obj 480 100 noise~;
 #X obj 480 130 expr~ $v1 < 0.02;
 #X obj 480 160 samphold~;
@@ -349,7 +349,7 @@
 #X obj 640 100 noise~;
 #X obj 640 130 hip~ 10;
 #X obj 200 70 sig~;
-#X obj 320 200 expr~ if($v9==0,$v1,if($v9==1,$v2,if($v9==2,$v3,if($v9==3,$v4,if($v9==4,$v5,if($v9==5,$v6,if($v9==6,$v7,$v8))))))));;
+#X obj 320 200 expr~ if($v9==0,$v1,if($v9==1,$v2,if($v9==2,$v3,if($v9==3,$v4,if($v9==4,$v5,if($v9==5,$v6,if($v9==6,$v7,$v8)))))));
 #X obj 320 230 *~ 0.9;
 #X obj 320 260 outlet~;
 #X connect 0 0 3 0;
