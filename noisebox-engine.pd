@@ -22,9 +22,8 @@
 #X obj 120 160 + 0.5;
 #X obj 120 190 int;
 #X obj 120 220 mtof;
-#X obj 200 40 r noisebox-hold;
 #X obj 260 40 r noisebox-osc-wave;
-#X obj 40 250 expr if(($f3==0)&&($f4!=2)&&($f4!=4),$f2,$f1);
+#X obj 40 250 expr if($f3==2||$f3==4,$f1,$f2);
 #X obj 40 280 clip 10 12000;
 #X obj 40 310 pack f 5;
 #X obj 40 340 line~;
@@ -53,8 +52,7 @@
 #X connect 5 0 6 0;
 #X connect 2 0 9 0;
 #X connect 6 0 9 1;
-#X connect 7 0 9 2;
-#X connect 8 0 9 3;
+#X connect 8 0 9 2;
 #X connect 9 0 10 0;
 #X connect 10 0 11 0;
 #X connect 11 0 12 0;
