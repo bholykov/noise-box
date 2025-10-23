@@ -39,8 +39,8 @@
 #X obj 960 340 pd freq-touch;
 #X obj 1060 780 dac~;
 #X connect 3 0 4 0;
-#X connect 19 0 22 0;
-#X connect 19 1 22 1;
+#X connect 21 0 24 0;
+#X connect 21 1 24 1;
 #N canvas 160 100 1180 880 engine 0;
 #X obj 40 40 r noisebox-osc-freq;
 #X obj 40 70 clip 20 8000;
